@@ -52,3 +52,4 @@ defined('BASEPATH') or exit('No direct script access allowed');
 $route['default_controller'] = 'Home_con';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
+$route['overview'] = 'Home_con/owner_view';

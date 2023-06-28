@@ -58,7 +58,7 @@
                     </li>
                 </ul>
                 <div class="d-flex">
-                    <button type="button" id="property_button" class="btn  btn-outline-dark shadow-none me-lg-3 me-2" data-bs-toggle="modal">
+                    <button type="button" id="property_button" class="btn  btn-outline-dark shadow-none me-lg-3 me-2">
                         List Your Property
                     </button>
 
@@ -84,11 +84,11 @@
                         <form>
                             <div class="mb-3">
                                 <label for="Email1" class="form-label">Email address</label>
-                                <input type="email" class="form-control" id="Email1" aria-describedby="emailHelp">
+                                <input type="email" class="form-control log_in" id="Email1" aria-describedby="emailHelp">
                             </div>
                             <div class="mb-3">
                                 <label for="Password1" class="form-label">Password</label>
-                                <input type="password" class="form-control" id="Password1">
+                                <input type="password" class="form-control log_in" id="Password1">
                             </div>
                             <button type="button" id="register_btn" class="btn btn-primary">Register Here</button>
 
@@ -96,7 +96,7 @@
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                        <button type="button" class="btn btn-primary">Login</button>
+                        <button type="button" id="login_btn" class="btn btn-primary">Login</button>
                     </div>
                 </form>
 
@@ -121,27 +121,27 @@
                         <form id="save_form">
                             <div class="mb-3">
                                 <label for="Name" class="form-label">Name</label>
-                                <input type="text" class="form-control" id="Name" aria-describedby="emailHelp">
+                                <input type="text" class="form-control register" id="Name" aria-describedby="emailHelp">
                             </div>
                             <div class="mb-3">
                                 <label for="exampleInputEmail1" class="form-label">Email address</label>
-                                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                                <input type="email" class="form-control register" id="exampleInputEmail1" aria-describedby="emailHelp">
                             </div>
                             <div class="mb-3">
                                 <label for="exampleInputContact1" class="form-label">Contact</label>
-                                <input type="number" class="form-control" id="exampleInputContact1" aria-describedby="emailHelp">
+                                <input type="number" class="form-control register" id="exampleInputContact1" aria-describedby="emailHelp">
                             </div>
                             <div class="mb-3">
                                 <label for="exampleInpuAddress1" class="form-label">Address</label>
-                                <input type="text" class="form-control" id="exampleInpuAddress1" aria-describedby="emailHelp">
+                                <input type="text" class="form-control register" id="exampleInpuAddress1" aria-describedby="emailHelp">
                             </div>
                             <div class="mb-3">
                                 <label for="exampleInputPassword1" class="form-label">Password</label>
-                                <input type="password" class="form-control" id="exampleInputPassword1">
+                                <input type="password" class="form-control register" id="exampleInputPassword1">
                             </div>
                             <div class="mb-3">
                                 <label for="exampleInputConfirmPassword1" class="form-label">Confirm Password</label>
-                                <input type="password" class="form-control" id="exampleInputConfirmPassword1">
+                                <input type="password" class="form-control register" id="exampleInputConfirmPassword1">
                             </div>
                         </form>
                     </div>
@@ -154,13 +154,13 @@
             </div>
         </div>
     </div>
-    <div class="container-fluid">
+    <!-- <div class="container-fluid">
         <div class="swiper mySwiper">
             <div class="swiper-wrapper">
-                <div class="swiper-slide img-slide">
-                    <!-- swiper-slide img-slide -->
-                    <!-- add images to your preference -->
-                    <img src="image/img1.jpg" class="img d-block" />
+                <div class="swiper-slide img-slide"> -->
+    <!-- swiper-slide img-slide -->
+    <!-- add images to your preference -->
+    <!-- <img src="image/img1.jpg" class="img d-block" />
                 </div>
                 <div class="swiper-slide">
                     <img src="image/img1.jpg" class="img d-block" />
@@ -173,7 +173,47 @@
             </div>
 
         </div>
+    </div> -->
+
+    <div id="carouselExampleCaptions" class="carousel slide">
+        <div class="carousel-indicators">
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+        </div>
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="image/img1.jpg" class="d-block w-100" style="height: 350px !important;" alt="...">
+                <div class="carousel-caption d-none d-md-block">
+                    <h5>First slide label</h5>
+                    <p>Some representative placeholder content for the first slide.</p>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="image/img1.jpg" class="d-block w-100" style="height: 350px !important;" alt="...">
+                <div class="carousel-caption d-none d-md-block">
+                    <h5>Second slide label</h5>
+                    <p>Some representative placeholder content for the second slide.</p>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="image/img1.jpg" class="d-block w-100" style="height: 350px !important;" alt="...">
+                <div class="carousel-caption d-none d-md-block">
+                    <h5>Third slide label</h5>
+                    <p>Some representative placeholder content for the third slide.</p>
+                </div>
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
     </div>
+
     <!-- form -->
     <div class="container">
         <div class="row">
@@ -226,7 +266,7 @@
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
         <script src="https://code.jquery.com/jquery-3.7.0.slim.js" integrity="sha256-7GO+jepT9gJe9LB4XFf8snVOjX3iYNb0FHYr5LI1N5c=" crossorigin="anonymous"></script>
-
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js" integrity="sha512-3gJwYpMe3QewGELv8k/BX9vcqhryRdzRMxVfq6ngyWXwo03GFEzjsUm8Q7RZcHPHksttq7/GFoxjCVUjkjvPdw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
         <script src="assets/js/welcomepage.js"></script>
 
         <!-- script for this page -->

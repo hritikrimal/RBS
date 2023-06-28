@@ -2,6 +2,7 @@
 defined('BASEPATH') or exit('No direct script access allowed');
 class Home_mod extends CI_Model
 {
+    protected $table = "owner_register";
     public function __construct()
     {
         parent::__construct();
@@ -9,24 +10,25 @@ class Home_mod extends CI_Model
 
     public function insert_register()
     {
-        $object = array();
-        $object['name'] = $this->input->post('name');
-        $object['email'] = $this->input->post('email');
-        $object['contact'] = $this->input->post('contact');
-        $object['address'] = $this->input->post('address');
-        $object['password'] = $this->input->post('password');
-        $object['confirm_password'] = $this->input->post('con_password');
-
-
-
-        // return $object;
-        return $this->db->insert('infos', $object);
+        try {
+            $object = array();
+            $object['name'] = $this->input->post('name');
+            $object['email'] = $this->input->post('email');
+            $object['contact'] = $this->input->post('contact');
+            $object['address'] = $this->input->post('address');
+            $object['password'] = md5($this->input->post('password'));
+            // return $object;
+            return $this->db->insert($this->table, $object);
+        } catch (Exception $e) {
+            return $e->getMessage();
+        }
     }
-    // public function fetch_info()
-    // {
-    //     $fetch_data = $this->db->get('infos')->result_array();
-    //     return  $fetch_data;
-    // }
+    public function get_register()
+    {
+        $gmail = $this->input->post('gmail');
+        $this->db->where("email", $gmail);
+        return $this->db->get($this->table)->row_array();
+    }
     // public function edit_datas()
     // {
     //     $id = $this->input->post('id');

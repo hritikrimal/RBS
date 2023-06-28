@@ -1,19 +1,21 @@
 $(document).ready(function () {
-	var swiper = new Swiper(".mySwiper", {
-		spaceBetween: 30,
-		effect: "fade",
-		loop: true,
-		autoplay: {
-			delay: 3600,
-			disableOnInteraction: false,
-		},
+	// var swiper = new Swiper(".mySwiper", {
+	// 	spaceBetween: 30,
+	// 	effect: "fade",
+	// 	loop: true,
+	// 	autoplay: {
+	// 		delay: 3600,
+	// 		disableOnInteraction: false,
+	// 	},
 
-		// remove this if page and nav removed
-	});
+	// 	// remove this if page and nav removed
+	// });
 	// show property model
 	$("#property_button").click(function () {
 		$("#propertymodel").modal("show");
+		return;
 	});
+
 	$("#register_btn").click(function () {
 		$("#registermodel").modal("show");
 		$("#propertymodel").modal("hide");
@@ -51,6 +53,10 @@ $(document).ready(function () {
 			alert("Confirm Password is required !");
 			return;
 		}
+		if (password != con_password) {
+			alert("Password dosen`t match !");
+			return;
+		}
 
 		$.ajax({
 			url: "home_con/register",
@@ -66,11 +72,53 @@ $(document).ready(function () {
 			},
 			success: function (response) {
 				if (response.success) {
-					$("#information").modal("hide");
-					$("#save_form")[0].reset();
+					$("#registermodel").modal("hide");
+					$(".register").val("");
+
+					// $(".register").each(function () {
+					// 	$(this).val(" ");
+					// });
 
 					// fetch();
 					console.log(response);
+				} else {
+					console.log(response);
+					if (response.errors) {
+						// Display validation errors as flash messages
+						alert(response.errors);
+					}
+				}
+			},
+		});
+	});
+
+	$("#login_btn").click(function () {
+		var gmail = $("#Email1").val();
+		var password = $("#Password1").val();
+		if (gmail === "") {
+			alert("Gmail is required !");
+			return;
+		}
+		if (password === "") {
+			alert("Password is required !");
+			return;
+		}
+
+		$.ajax({
+			url: "home_con/login",
+			dataType: "json",
+			type: "POST",
+			data: {
+				gmail: gmail,
+				password: password,
+			},
+			success: function (response) {
+				if (response.success) {
+					console.log(response);
+					$("#propertymodel").modal("hide");
+					$(".log_in").val("");
+					window.location.href = response.url;
+					console.log(response.url);
 				} else {
 					console.log(response);
 					if (response.errors) {
