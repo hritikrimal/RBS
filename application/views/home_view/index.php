@@ -23,6 +23,7 @@
 </head>
 
 <body>
+    <!-- Nab Bar -->
     <nav class="navbar navbar-expand-lg navbar-light bg-white px-lg-3 py-lg-2 shadow-sm sticky-top">
         <div class="container-fluid">
             <a class="navbar-brand me-5 fw-bold fs-3 h-font" href="register.php">Room Booking</a>
@@ -66,9 +67,8 @@
             </div>
         </div>
     </nav>
-
+    <!-- Login Model -->
     <div class="modal fade" id="propertymodel" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-
         <div class="modal-dialog">
             <div class="modal-content">
                 <form>
@@ -76,7 +76,7 @@
                         <h5 class="modal-title">
                             <i class="bi bi-person-circle"></i> Login
                         </h5>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        <button type="button" class="btn-close" id="loin_cross" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
 
@@ -89,13 +89,13 @@
                             <div class="mb-3">
                                 <label for="Password1" class="form-label">Password</label>
                                 <input type="password" class="form-control log_in" id="Password1">
-                            </div>
-                            <button type="button" id="register_btn" class="btn btn-primary">Register Here</button>
+                            </div><span>Not Register yet</span>
+                            <button type="button" id="register_btn" class="btn "><u>Register Here !</u></button>
 
                         </form>
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <button type="button" id="login_close" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                         <button type="button" id="login_btn" class="btn btn-primary">Login</button>
                     </div>
                 </form>
@@ -103,9 +103,9 @@
             </div>
         </div>
     </div>
-    <!-- register -->
-    <div class="modal fade" id="registermodel" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
 
+    <!-- register Model-->
+    <div class="modal fade" id="registermodel" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
                 <form>
@@ -113,7 +113,7 @@
                         <h5 class="modal-title">
                             <i class="bi bi-person-circle"></i> Register
                         </h5>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        <button type="button" id="reg_cross" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
 
@@ -146,7 +146,7 @@
                         </form>
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <button type="button" id="register_close" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                         <button type="button" id="register" class="btn btn-primary">Register</button>
                     </div>
                 </form>
@@ -154,27 +154,7 @@
             </div>
         </div>
     </div>
-    <!-- <div class="container-fluid">
-        <div class="swiper mySwiper">
-            <div class="swiper-wrapper">
-                <div class="swiper-slide img-slide"> -->
-    <!-- swiper-slide img-slide -->
-    <!-- add images to your preference -->
-    <!-- <img src="image/img1.jpg" class="img d-block" />
-                </div>
-                <div class="swiper-slide">
-                    <img src="image/img1.jpg" class="img d-block" />
-
-                </div>
-                <div class="swiper-slide">
-                    <img src="image/img1.jpg" class="img d-block" />
-
-                </div>
-            </div>
-
-        </div>
-    </div> -->
-
+    <!-- slider -->
     <div id="carouselExampleCaptions" class="carousel slide">
         <div class="carousel-indicators">
             <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
@@ -214,7 +194,7 @@
         </button>
     </div>
 
-    <!-- form -->
+    <!-- Booking form -->
     <div class="container">
         <div class="row">
             <div class="col-lg-12 bg-white shadow p-4 rounded">

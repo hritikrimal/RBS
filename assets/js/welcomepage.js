@@ -1,19 +1,20 @@
 $(document).ready(function () {
-	// var swiper = new Swiper(".mySwiper", {
-	// 	spaceBetween: 30,
-	// 	effect: "fade",
-	// 	loop: true,
-	// 	autoplay: {
-	// 		delay: 3600,
-	// 		disableOnInteraction: false,
-	// 	},
-
-	// 	// remove this if page and nav removed
-	// });
-	// show property model
 	$("#property_button").click(function () {
 		$("#propertymodel").modal("show");
 		return;
+	});
+	$("#login_close").click(function () {
+		$(".log_in").val("");
+	});
+	$("#loin_cross").click(function () {
+		$(".log_in").val("");
+	});
+
+	$("#reg_cross").click(function () {
+		$(".register").val("");
+	});
+	$("#register_close").click(function () {
+		$(".register").val("");
 	});
 
 	$("#register_btn").click(function () {
@@ -22,27 +23,47 @@ $(document).ready(function () {
 	});
 
 	$("#register").click(function () {
-		var name = $("#Name").val();
-		var email = $("#exampleInputEmail1").val();
+		var name = $("#Name").val().trim();
+		var email = $("#exampleInputEmail1").val().trim();
+		var pattern = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+		var number_pattern = /^[9]\d{9}$/;
+		var name_pattern = /^[A-Za-z ]+$/;
+
 		// alert(email);
-		var contact = $("#exampleInputContact1").val();
-		var address = $("#exampleInpuAddress1").val();
+		var contact = $("#exampleInputContact1").val().trim();
+		var address = $("#exampleInpuAddress1").val().trim();
 		var password = $("#exampleInputPassword1").val();
 		var con_password = $("#exampleInputConfirmPassword1").val();
 		if (name === "") {
 			alert("Name is required !");
 			return;
 		}
+		if (!name_pattern.test(name)) {
+			alert("Name must contain only alphabets and spaces!");
+			return;
+		}
 		if (email === "") {
 			alert("Email is required !");
+			return;
+		}
+		if (!pattern.test(email)) {
+			alert("enter valid email");
 			return;
 		}
 		if (contact === "") {
 			alert("Contact is required !");
 			return;
 		}
+		if (!number_pattern.test(contact)) {
+			alert("Enter valid Phone Number !");
+			return;
+		}
 		if (address === "") {
 			alert("Address is required !");
+			return;
+		}
+		if (!name_pattern.test(address)) {
+			alert("Address must contain only alphabets and spaces!");
 			return;
 		}
 		if (password === "") {
@@ -74,12 +95,6 @@ $(document).ready(function () {
 				if (response.success) {
 					$("#registermodel").modal("hide");
 					$(".register").val("");
-
-					// $(".register").each(function () {
-					// 	$(this).val(" ");
-					// });
-
-					// fetch();
 					console.log(response);
 				} else {
 					console.log(response);
@@ -91,12 +106,27 @@ $(document).ready(function () {
 			},
 		});
 	});
+	// phone number validation only 10 digit entry
+	$("#exampleInputContact1").on("input", function () {
+		var mobileNumber = $(this).val();
+
+		if (mobileNumber.length > 10) {
+			mobileNumber = mobileNumber.slice(0, 10);
+			$(this).val(mobileNumber);
+		}
+	});
 
 	$("#login_btn").click(function () {
 		var gmail = $("#Email1").val();
 		var password = $("#Password1").val();
+		var pattern = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+
 		if (gmail === "") {
 			alert("Gmail is required !");
+			return;
+		}
+		if (!pattern.test(gmail)) {
+			alert("enter valid email");
 			return;
 		}
 		if (password === "") {
@@ -124,122 +154,10 @@ $(document).ready(function () {
 					if (response.errors) {
 						// Display validation errors as flash messages
 						alert(response.errors);
+						$(".log_in").val("");
 					}
 				}
 			},
 		});
 	});
-	// 	// to fetch data
-	// 	function fetch() {
-	// 		$.ajax({
-	// 			url: "Home_con/fetch_data",
-	// 			dataType: "Json",
-	// 			type: "post",
-	// 			data: {},
-	// 			success: function (response) {
-	// 				if (response.success) {
-	// 					// console.log(response);
-	// 					var tbody = "";
-	// 					var i = 1;
-	// 					for (var key in response.data) {
-	// 						tbody += "<tr>";
-	// 						tbody += "<td>" + i++ + "</td>";
-	// 						tbody += "<td>" + response.data[key]["name"] + "</td>";
-	// 						tbody += "<td>" + response.data[key]["email"] + "</td>";
-	// 						tbody += `<td>
-	//  							<div class="d-flex">
-	//  								<a href="#" id="edit_btn" class="btn btn-primary btn-sm m-1 view" value="${response.data[key]["id"]}">Edit</a>
-	//  								<a href="#" id="dlt_btn" class="btn btn-danger btn-sm m-1 reg_bill" value="${response.data[key]["id"]}">Delete</a>
-	//  							</div>
-	//  						</td>`;
-	// 						tbody += "</tr>";
-	// 					}
-	// 					$("#info_tbody").html(tbody);
-	// 				} else {
-	// 					alert(response.error);
-	// 				}
-	// 			},
-	// 		});
-	// 	}
-	// 	fetch();
-
-	// 	// edit
-	// 	$(document).on("click", "#edit_btn", function () {
-	// 		var id = $(this).attr("value");
-	// 		// alert(id);
-	// 		$.ajax({
-	// 			url: "Home_con/edit_data",
-	// 			dataType: "json",
-	// 			type: "post",
-	// 			data: {
-	// 				id: id,
-	// 			},
-	// 			success: function (response) {
-	// 				// console.log(response);
-	// 				$("#edit_username").val(response.data.name);
-	// 				$("#edit_email").val(response.data.email);
-	// 				$("#edit_model").modal("show");
-	// 			},
-	// 		});
-	// 		$(document)
-	// 			.off("click", "#update")
-	// 			.on("click", "#update", function () {
-	// 				var edit_name = $("#edit_username").val();
-	// 				var edit_email = $("#edit_email").val();
-	// 				// alert(edit_name);
-	// 				// alert(edit_email);
-	// 				$.ajax({
-	// 					url: "Home_con/update_data",
-	// 					dataType: "json",
-	// 					type: "post",
-	// 					data: {
-	// 						id: id,
-	// 						edit_name: edit_name,
-	// 						edit_email: edit_email,
-	// 					},
-	// 					success: function (response) {
-	// 						console.log("hi");
-
-	// 						$("#edit_model").modal("hide");
-	// 						$("#edit_form")[0].reset();
-	// 						fetch();
-	// 					},
-	// 				});
-	// 			});
-	// 	});
-	// 	$(document).on("click", "#dlt_btn", function () {
-	// 		var id = $(this).attr("value");
-	// 		// alert(id);
-	// 		$.ajax({
-	// 			url: "home_con/delete_data",
-	// 			dataType: "json",
-	// 			type: "post",
-	// 			data: {
-	// 				id: id,
-	// 			},
-	// 			success: function (response) {
-	// 				// console.log(response);
-	// 				fetch();
-	// 			},
-	// 		});
-	// 	});
-
-	function displayFlashMessage(message, duration) {
-		var flashMessage = $(
-			'<div class="toast w-100" role="alert" aria-live="assertive" aria-atomic="true">' +
-				'<div class="toast-body">' +
-				message +
-				"</div>" +
-				"</div>"
-		);
-
-		$("#flash-messages").append(flashMessage);
-
-		var toast = new bootstrap.Toast(flashMessage[0]);
-		toast.show();
-
-		setTimeout(function () {
-			flashMessage.toast("dispose");
-		}, duration);
-	}
 });

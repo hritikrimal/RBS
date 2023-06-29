@@ -48,6 +48,7 @@ class Home_con extends CI_Controller
             $obj = $this->home_mod->get_register();
             if ($obj == null) {
                 $response['success'] = false;
+                $response['errors'] =  "Invalid Email or Password ";
             } else {
 
                 $passwords = $obj['password'];
@@ -60,6 +61,7 @@ class Home_con extends CI_Controller
                     $response['url'] = 'http://localhost/RBS/overview';
                 } else {
                     $response['success'] = false;
+                    $response['errors'] =  "Invalid password ";
                 }
             }
         } else {
@@ -74,35 +76,4 @@ class Home_con extends CI_Controller
     {
         $this->load->view('home_view/ownerview.php');
     }
-    // public function fetch_data()
-    // {
-    //     $data = $this->home_mod->fetch_info();
-    //     if ($data) {
-    //         $response['success'] = true;
-    //         $response['data'] = $data;
-    //     } else {
-    //         $response['success'] = false;
-    //         $response['error'] = "No data";
-    //     }
-    //     echo json_encode($response);
-    // }
-    // public function edit_data()
-    // {
-    //     $rowdata = $this->home_mod->edit_datas();
-    //     $response['data'] = $rowdata;
-
-    //     echo json_encode($response);
-    // }
-    // public function update_data()
-    // {
-    //     $this->home_mod->update_infos();
-    //     $response['success'] = true;
-    //     echo json_encode($response);
-    // }
-    // public function delete_data()
-    // {
-    //     $this->home_mod->delete();
-    //     $response['success'] = true;
-    //     echo json_encode($response);
-    // }
 }
