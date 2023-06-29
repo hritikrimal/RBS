@@ -44,23 +44,7 @@
 
 
 
-        <div class="modal" tabindex="-1">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title">Modal title</h5>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body">
-                        <p>Modal body text goes here.</p>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                        <button type="button" class="btn btn-primary">Save changes</button>
-                    </div>
-                </div>
-            </div>
-        </div>
+
         <div class="card mt-3">
             <div class="card-header">
                 Property Information
@@ -102,8 +86,8 @@
                         <input type="text" class="form-control" id="validationCustom05" required>
 
                     </div>
+                </form>
             </div>
-            </form>
         </div>
         <div class="card mt-3">
             <div class="card-header">
@@ -140,7 +124,7 @@
 
                     </div>
                     <div class="col-md-12">
-                        <label for="numberofbed" class="form-label">Number of Bed</label><br>
+                        <label for="numberofbed" class="form-label">What can guest use at your hotel?</label><br>
                         <input type="checkbox" name="garden" value="garden" id="numberofbed"><span class="pl-1">
                             garden
                         </span> &nbsp;
@@ -171,33 +155,60 @@
                         </span> &nbsp;
 
                     </div>
-                    <div class="col-md-12">
+                    <!-- <div class="col-md-12">
                         <div class="form-check form-switch">
                             <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckChecked" checked>
                             <label class="form-check-label" for="flexSwitchCheckChecked">Checked switch checkbox input</label>
-                        </div>
-                    </div>
+                        </div> -->
             </div>
-            </form>
         </div>
-    </div>
+
+        <div class="card mt-3">
+            <div class="card-header">
+                Property Rules
+            </div>
+            <div class="card-body">
+                <form class="row g-3">
+                    <div class="col-md-3">
+                        <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckChecked" checked>
+                        <label class="form-check-label" for="flexSwitchCheckChecked">smoking Allowed</label>
+                    </div>
+                    <div class="col-md-3">
+                        <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckChecked" checked>
+                        <label class="form-check-label" for="flexSwitchCheckChecked">Pets Allowed</label>
+
+                    </div>
+                    <div class="col-md-3">
+                        <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckChecked" checked>
+                        <label class="form-check-label" for="flexSwitchCheckChecked">Event Allowed</label>
+
+                    </div>
+                    <div class="col-md-3">
+                        <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckChecked" checked>
+                        <label class="form-check-label" for="flexSwitchCheckChecked">Parties Allowed</label>
+
+                    </div>
+                </form>
+            </div>
+
+        </div>
 
 
-    </div>
-    <!--Our Rooms-->
-    <div class="" <br><br>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-        <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
-        <script src="https://code.jquery.com/jquery-3.7.0.slim.js" integrity="sha256-7GO+jepT9gJe9LB4XFf8snVOjX3iYNb0FHYr5LI1N5c=" crossorigin="anonymous"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js" integrity="sha512-3gJwYpMe3QewGELv8k/BX9vcqhryRdzRMxVfq6ngyWXwo03GFEzjsUm8Q7RZcHPHksttq7/GFoxjCVUjkjvPdw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+        <!--Our Rooms-->
+        <div class="" <br><br>
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+            <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+            <script src="https://code.jquery.com/jquery-3.7.0.slim.js" integrity="sha256-7GO+jepT9gJe9LB4XFf8snVOjX3iYNb0FHYr5LI1N5c=" crossorigin="anonymous"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js" integrity="sha512-3gJwYpMe3QewGELv8k/BX9vcqhryRdzRMxVfq6ngyWXwo03GFEzjsUm8Q7RZcHPHksttq7/GFoxjCVUjkjvPdw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
 
-        <!-- script for this page -->
-        <script>
-            $(document).ready(function() {
+            <!-- script for this page -->
+            <script>
+                $(document).ready(function() {
 
-            });
-        </script>
+                });
+            </script>
 
 
 </body>
