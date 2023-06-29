@@ -5,6 +5,8 @@ class Home_con extends CI_Controller
     public function __construct()
     {
         parent::__construct();
+        // parent::__construct();
+        // $this->load->model('home_mod');
         $this->load->model('home_mod');
     }
     // view page 
